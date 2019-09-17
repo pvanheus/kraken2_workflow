@@ -1,6 +1,6 @@
 dir: 
   class: Directory
-  path: /home/pvh/Data/fastq
+  path: /usr/people/pvh/kraken/sample/
 paired_reads:
   paired: true
 compressed_files:
