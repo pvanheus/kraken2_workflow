@@ -32,7 +32,7 @@ steps:
         in:
             dir: sample_dir
             paired_reads: paired_reads
-            compression_options: compressed_files
+            compressed_files: compressed_files
         out: 
           - fastq_files
           - sample_names

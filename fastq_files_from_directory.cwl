@@ -21,7 +21,7 @@ inputs:
     type:
       - "null"
       - fastq_from_directory_types.yml#paired_end_options
-  compression_options:
+  compressed_files:
     type: 
       - "null"
       - fastq_from_directory_types.yml#gzip_compressed
@@ -40,7 +40,7 @@ outputs:
 expression: |
         ${
           var is_gzip = inputs.compressed_files ? inputs.compressed_files.gzip_compressed : false;
-          var is_bzip2 = inputs.compressed_files ? inputs.compressed_filesls.bzip2_compressed : false;
+          var is_bzip2 = inputs.compressed_files ? inputs.compressed_files.bzip2_compressed : false;
           var do_paired = inputs.paired_reads && inputs.paired_reads.paired;
           var paired_end_designator = '';
           if (inputs.paired_reads && inputs.paired_reads.paired) {

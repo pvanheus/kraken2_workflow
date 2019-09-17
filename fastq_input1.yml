@@ -3,5 +3,5 @@ dir:
   path: /home/pvh/Data/fastq
 paired_reads:
   paired: true
-compression_options:
+compressed_files:
   gzip_compressed: true
