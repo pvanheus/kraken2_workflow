@@ -6,5 +6,5 @@ database:
   path: /tools/databases/kraken2/06082019/
 paired_reads:
   paired: true
-compression_options:
+compressed_files:
   gzip_compressed: true
