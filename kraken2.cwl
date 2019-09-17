@@ -24,6 +24,7 @@ inputs:
       - File
       - File[]
     label: "Input sequence files"
+    streamable: true
     format:
       - edam:format_1929  # FASTA
       - edam:format_1930  # FASTQ

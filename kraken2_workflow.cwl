@@ -6,12 +6,17 @@ requirements:
   - class: ScatterFeatureRequirement
   - class: SchemaDefRequirement
     types:
-      - $import: paired_end_record.yml
+      - $import: fastq_from_directory_types.yml
 
 inputs:
     sample_dir: Directory
     database: Directory
-    paired_reads: paired_end_record.yml#paired_end_options
+    paired_reads: fastq_from_directory_types.yml#paired_end_options
+    compressed_files: 
+        - "null"
+        - fastq_from_directory_types.yml#gzip_compressed
+        - fastq_from_directory_types.yml#bzip2_compressed
+        
 outputs:
     fastq_files: 
         type: 

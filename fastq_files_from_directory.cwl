@@ -2,10 +2,17 @@
 cwlVersion: v1.0
 class: ExpressionTool
 id: fastq_files_from_directory
-    
+
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: SchemaDefRequirement
+    types:
+      - $import: fastq_from_directory_types.yml
+      - $import: compression_options.yml
 inputs:
   dir:
     type: Directory
+    streamable: true
     label: "Directory containing FASTQ files"
   fastq_suffix:
     type: string?
@@ -14,20 +21,12 @@ inputs:
   paired_reads:
     type:
       - "null"
-      - paired_end_record.yml#paired_end_options
-  compressed_files:
-    type:
+      - fastq_from_directory_types.yml#paired_end_options
+  compression_options:
+    type: 
       - "null"
-      - type: record
-        fields:
-          gzip_compressed:
-            type: boolean?
-            label: "Set to true if files are compressed with gzip"
-      - type: record
-        fields:
-          bzip2_compressed:
-            type: boolean?
-            label: "Set to true if files are compressed with bzip2"
+      - fastq_from_directory_types.yml#gzip_compressed
+      - fastq_from_directory_types.yml#bzip2_compressed
 
 outputs:
   sample_names:
@@ -80,12 +79,6 @@ expression: |
             'fastq_files': fastq_files
           };
         }
-
-requirements:
-  - class: InlineJavascriptRequirement
-  - class: SchemaDefRequirement
-    types:
-      - $import: paired_end_record.yml
 
 $namespaces:
   edam: http://edamontology.org/

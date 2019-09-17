@@ -1,0 +1,10 @@
+sample_dir:
+  class: Directory
+  path: /usr/people/pvh/kraken/sample/
+database:
+  class: Directory
+  path: /tools/databases/kraken2/06082019/
+paired_reads:
+  paired: true
+compression_options:
+  gzip_compressed: true

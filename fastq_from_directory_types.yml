@@ -1,0 +1,21 @@
+- name: paired_end_options
+  type: record
+  fields:
+    paired:
+      type: boolean?
+      label: "Are reads paired?"
+    paired_end_designator:
+      type: string?
+      label: "Regular expression denoting the read pair"
+- name: gzip_compressed
+  type: record
+  fields:
+    gzip_compressed:
+      type: boolean?
+      label: "Set to true if files are compressed with gzip"
+- name: bzip2_compressed
+  type: record
+  fields:
+    bzip2_compressed:
+      type: boolean?
+      label: "Set to true if files are compressed with bzip2"
