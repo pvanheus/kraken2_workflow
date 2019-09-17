@@ -1,0 +1,7 @@
+dir: 
+  class: Directory
+  path: /home/pvh/Data/fastq
+paired_reads:
+  paired: true
+compression_options:
+  gzip_compressed: true

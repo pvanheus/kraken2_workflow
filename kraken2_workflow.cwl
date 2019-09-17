@@ -16,7 +16,7 @@ inputs:
         - "null"
         - fastq_from_directory_types.yml#gzip_compressed
         - fastq_from_directory_types.yml#bzip2_compressed
-        
+
 outputs:
     fastq_files: 
         type: 
@@ -32,6 +32,7 @@ steps:
         in:
             dir: sample_dir
             paired_reads: paired_reads
+            compression_options: compressed_files
         out: 
           - fastq_files
           - sample_names
