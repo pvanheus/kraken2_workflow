@@ -8,7 +8,6 @@ requirements:
   - class: SchemaDefRequirement
     types:
       - $import: fastq_from_directory_types.yml
-      - $import: compression_options.yml
 inputs:
   dir:
     type: Directory
